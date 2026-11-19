@@ -1,0 +1,178 @@
+:root {
+  --bg: #fbfaf7;
+  --text: #1d2433;
+  --muted: #5b6475;
+  --accent: #2f5de4;
+  --line: #e4e2db;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171f;
+    --text: #eceef3;
+    --muted: #a2a9b8;
+    --accent: #7c9bff;
+    --line: #2a2f3b;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+.logo {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.25rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Sections */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.hero {
+  padding: 4rem 0;
+  border-top: none;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  max-width: 60ch;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.skills {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:hover {
+  opacity: 0.88;
+}
+
+/* Projects */
+.project-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.project {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.project p {
+  margin-bottom: 0.6rem;
+}
+
+/* Contact */
+.links {
+  margin-top: 1.25rem;
+}
+
+.links a {
+  margin-right: 1.25rem;
+}
+
+/* Footer */
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
